@@ -1,0 +1,9 @@
+[project]
+name = "the-cost-of-stopping-sim"
+version = "0.1.0"
+description = "A capability-hysteresis model of a reactor-building system: stock-flow illusion, critical freeze duration, self-validating trap, coordination wedge, counterfactual scenarios and regime grid"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+]
