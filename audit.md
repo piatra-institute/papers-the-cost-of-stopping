@@ -2,6 +2,11 @@
 
 Dated log of editorial passes and verification runs. Newest first.
 
+## 2026-09-23 — prose revision
+
+Prose revised against the house standards. Headings made descriptive (Introduction, Chronology of the retreat, Five processes of stopping, The 2005 restart, Closure order and the German phase-out, The 2022 crisis, A model of a building system, Forgetting, learning and the illusion window, Cost-reading decisions and lock-in, National decisions and continental capability, Four counterfactual order books, Sensitivity and limitations, Conclusion, Reproducibility).
+Grid audit: freeze thresholds (7 and 13 years) are on an integer-year freeze grid, which matches the model's annual time step; the crash-expansion comparison over externality prices is now explicitly stated as a grid in quarter steps. No other grid-derived thresholds. results.json unchanged by the figure edits.
+
 ## 2026-08-06 — v1, first full draft to publication
 
 Scope: the entire paper, simulation, and evidence base, from the seed chat to publication.

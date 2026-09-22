@@ -47,7 +47,7 @@ def plot_stock_flow(res: dict, runs: dict, years, path: str) -> None:
     a1.axvline(sf["order_stop_year"], color=INK, lw=0.9, ls="--")
     a1.text(sf["order_stop_year"] + 0.8, 4.6, f"orders stop {sf['order_stop_year']}",
             fontsize=8, color=INK)
-    a1.set_title("the flow: construction starts", fontsize=10, color=INK, loc="left")
+    a1.set_title("construction starts", fontsize=10, color=INK, loc="left")
 
     a2.plot(years, r["output"], color="#2563eb", lw=1.8)
     a2.axvspan(sf["order_stop_year"], sf["plateau_end_year"],
@@ -57,8 +57,8 @@ def plot_stock_flow(res: dict, runs: dict, years, path: str) -> None:
     a2.text(sf["output_peak_year"] + 0.8, 200,
             f"peak {sf['output_peak_year']}, plateau to {sf['plateau_end_year']}",
             fontsize=8, color=INK)
-    a2.set_title(f"the stock: generation holds for {sf['illusion_window_years']} "
-                 "years after the orders stopped", fontsize=10, color=INK, loc="left")
+    a2.set_title(f"nuclear generation ({sf['illusion_window_years']}-year plateau "
+                 "after orders stop)", fontsize=10, color=INK, loc="left")
 
     a3.plot(years, r["K"], color="#b3202c", lw=1.8)
     a3.set_ylabel("capability K", fontsize=8.5)
@@ -66,7 +66,7 @@ def plot_stock_flow(res: dict, runs: dict, years, path: str) -> None:
     a3.axhline(0.5 * sf["k_mature"], color=INK, lw=0.9, ls="--")
     a3.text(2024, 0.5 * sf["k_mature"] + 0.04, "half the mobilization level",
             fontsize=8, color=INK)
-    a3.set_title("the third clock: the capability underneath both",
+    a3.set_title("capability stock",
                  fontsize=10, color=INK, loc="left")
     a3.set_xlabel("year", fontsize=9)
     for ax in (a1, a2, a3):
@@ -90,7 +90,7 @@ def plot_ratchet(res: dict, path: str) -> None:
     a1.text(1, ra["tolerance"] + 0.12, "tolerance", fontsize=8, color=INK)
     a1.set_xlabel("years", fontsize=9)
     a1.set_ylabel("cost of the next unit (mature = 1)", fontsize=9)
-    a1.set_title("two freezes, two futures", fontsize=10, color=INK)
+    a1.set_title("next-unit cost after 3- and 14-year freezes", fontsize=10, color=INK)
     a1.legend(frameon=False, fontsize=8.5, loc="center right")
 
     tols = [float(x) for x in ra["critical_freeze_by_tolerance"].keys()]
@@ -103,7 +103,7 @@ def plot_ratchet(res: dict, path: str) -> None:
     a2.set_xlabel("cost tolerance of the chooser", fontsize=9)
     a2.set_ylabel("critical freeze duration (years)", fontsize=9)
     a2.set_ylim(0, 21)
-    a2.set_title("how long a freeze the trap needs", fontsize=10, color=INK)
+    a2.set_title("critical freeze length against cost tolerance", fontsize=10, color=INK)
     for ax in (a1, a2):
         _style(ax)
     fig.tight_layout()
@@ -130,7 +130,7 @@ def plot_hysteresis(res: dict, path: str) -> None:
     ax.set_xticklabels([f"{r['freeze_years']}-year freeze" for r in rows], fontsize=9)
     ax.set_ylabel("years", fontsize=9)
     ax.set_ylim(0, 31)
-    ax.set_title("forgetting runs on the calendar, learning arrives at completion",
+    ax.set_title("building years needed against idle years",
                  fontsize=10, color=INK)
     ax.legend(frameon=False, fontsize=8.5, loc="upper left")
     _style(ax)
@@ -149,7 +149,7 @@ def plot_counterfactuals(res: dict, runs: dict, years, path: str) -> None:
                 lw=1.7, label=LABEL[name])
     a1.set_xlabel("year", fontsize=9)
     a1.set_ylabel("nuclear output (TWh)", fontsize=9)
-    a1.set_title("four order books, four fleets", fontsize=10, color=INK)
+    a1.set_title("nuclear output by scenario", fontsize=10, color=INK)
     a1.legend(frameon=False, fontsize=8, loc="upper left")
 
     comps = [("build", "#2563eb", "building"),
@@ -169,7 +169,7 @@ def plot_counterfactuals(res: dict, runs: dict, years, path: str) -> None:
     a2.set_xticks(x)
     a2.set_xticklabels([LABEL[n].replace(" ", "\n") for n in ORDER], fontsize=8)
     a2.set_ylabel("total cost 1973–2040 (mature units)", fontsize=9)
-    a2.set_title("what each path spends", fontsize=10, color=INK)
+    a2.set_title("total cost by scenario, 1973-2040", fontsize=10, color=INK)
     a2.legend(frameon=False, fontsize=8, loc="upper right")
     for ax in (a1, a2):
         _style(ax)
@@ -191,7 +191,7 @@ def plot_regimes(res: dict, path: str) -> None:
             color="#b3202c", lw=1.8, ms=5, label="national choosers (Nash)")
     a1.set_xlabel("continental share of capability", fontsize=9)
     a1.set_ylabel("per-country order rate (units / year)", fontsize=9)
-    a1.set_title("the wedge opens where capability is shared",
+    a1.set_title("order rates by planner against spillover share",
                  fontsize=10, color=INK)
     a1.legend(frameon=False, fontsize=8.5, loc="upper left")
 
@@ -221,7 +221,7 @@ def plot_regimes(res: dict, path: str) -> None:
     a2.set_yticklabels([f"{'no shock' if s == 0 else 'shock'}, {r} renewables"
                         for s, r in rows], fontsize=8)
     a2.set_xlabel("fossil externality price (multiple of base)", fontsize=9)
-    a2.set_title("where the replacement sequence pays; renewables timing barely moves it",
+    a2.set_title("continuity advantage across regimes",
                  fontsize=10, color=INK)
     a2.grid(False)
     _style(a1)
