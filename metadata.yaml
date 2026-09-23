@@ -7,7 +7,7 @@ created: 2026-08
 date: August 2026
 paper_dir: paper
 has_simulation: true
-claims_target: results.json
+claims_target: claim-ledger
 repo: git@github.com:piatra-institute/papers-the-cost-of-stopping.git
 github: https://github.com/piatra-institute/papers-the-cost-of-stopping
 status: published
@@ -24,8 +24,7 @@ abstract: 'Between the oil shock of 1973 and the gas shock of 2022, Western Euro
   while decisions to order or cancel were national. A deterministic model calibrated to the fourteen-year
   construction hiatus, the fourfold restart premium and a 15% series effect reproduces the record''s shape.
   Output holds near its peak for 28 years after orders stop while capability falls to a third of its mobilization
-  level; a cost-reading decision-maker recovers from an order freeze of up to 7 years and remains locked
-  beyond it; and fourteen idle years take 22 building years to undo. Against the observed path, retaining
+  level; a cost-reading decision-maker recovers from an order freeze shorter than 7 years and remains locked from 7 years on; and fourteen idle years take 22 building years to undo. Against the observed path, retaining
   the closed reactors saves 8% of total system cost, and adding a replacement sequence of two units a
   year saves 24%, an advantage that holds in 21 of 24 regimes.'
 web_blurb: Europe stopped building reactors before Chernobyl and lost the capability to build. A calibrated

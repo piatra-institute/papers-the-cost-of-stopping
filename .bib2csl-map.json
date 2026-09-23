@@ -1,0 +1,229 @@
+[
+ {
+  "id": "argote1990",
+  "families": [
+   "Argote",
+   "Epple"
+  ],
+  "authors_text": "Argote, L., and Epple, D.",
+  "year": "1990",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "arrow1962",
+  "families": [
+   "Arrow"
+  ],
+  "authors_text": "Arrow, K. J.",
+  "year": "1962",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "benkard2000",
+  "families": [
+   "Benkard"
+  ],
+  "authors_text": "Benkard, C. L.",
+  "year": "2000",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "berthelemy2015",
+  "families": [
+   "Berthélemy",
+   "Escobar Rangel"
+  ],
+  "authors_text": "Berthélemy, M., and Escobar Rangel, L.",
+  "year": "2015",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "blanchard1986",
+  "families": [
+   "Blanchard",
+   "Summers"
+  ],
+  "authors_text": "Blanchard, O. J., and Summers, L. H.",
+  "year": "1986",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "cour2025",
+  "families": [
+   "Cour des comptes"
+  ],
+  "authors_text": "Cour des comptes",
+  "year": "2025",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "davis2012",
+  "families": [
+   "Davis"
+  ],
+  "authors_text": "Davis, L. W.",
+  "year": "2012",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "dixit1992",
+  "families": [
+   "Dixit"
+  ],
+  "authors_text": "Dixit, A.",
+  "year": "1992",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "escobar2015",
+  "families": [
+   "Escobar Rangel",
+   "Lévêque"
+  ],
+  "authors_text": "Escobar Rangel, L., and Lévêque, F.",
+  "year": "2015",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "euratom2023",
+  "families": [
+   "Euratom Supply Agency"
+  ],
+  "authors_text": "Euratom Supply Agency",
+  "year": "2023",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "eurostat2025",
+  "families": [
+   "Eurostat"
+  ],
+  "authors_text": "Eurostat",
+  "year": "2025",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "grubler2010",
+  "families": [
+   "Grubler"
+  ],
+  "authors_text": "Grubler, A.",
+  "year": "2010",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "ipcc2022",
+  "families": [
+   "Intergovernmental Panel on Climate Change"
+  ],
+  "authors_text": "Intergovernmental Panel on Climate Change",
+  "year": "2022",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "iaea2023",
+  "families": [
+   "International Atomic Energy Agency"
+  ],
+  "authors_text": "International Atomic Energy Agency",
+  "year": "2023",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "iea2022",
+  "families": [
+   "International Energy Agency"
+  ],
+  "authors_text": "International Energy Agency",
+  "year": "2022",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "jarvis2022",
+  "families": [
+   "Jarvis",
+   "Deschenes",
+   "Jha"
+  ],
+  "authors_text": "Jarvis, S., Deschenes, O., and Jha, A.",
+  "year": "2022",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "koomey2017",
+  "families": [
+   "Koomey",
+   "Hultman",
+   "Grubler"
+  ],
+  "authors_text": "Koomey, J., Hultman, N. E., and Grubler, A.",
+  "year": "2017",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "lovering2016",
+  "families": [
+   "Lovering",
+   "Yip",
+   "Nordhaus"
+  ],
+  "authors_text": "Lovering, J. R., Yip, A., and Nordhaus, T.",
+  "year": "2016",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "muller2017",
+  "families": [
+   "Müller",
+   "Thurner"
+  ],
+  "authors_text": "Müller, W. C., and Thurner, P. W., eds",
+  "year": "2017",
+  "status": "VERIFIED-CROSSREF"
+ },
+ {
+  "id": "nao2017",
+  "families": [
+   "National Audit Office"
+  ],
+  "authors_text": "National Audit Office",
+  "year": "2017",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "nao2026",
+  "families": [
+   "National Audit Office"
+  ],
+  "authors_text": "National Audit Office",
+  "year": "2026",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "nea2020",
+  "families": [
+   "Nuclear Energy Agency"
+  ],
+  "authors_text": "Nuclear Energy Agency",
+  "year": "2020",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "stuk2019",
+  "families": [
+   "Radiation and Nuclear Safety Authority"
+  ],
+  "authors_text": "Radiation and Nuclear Safety Authority",
+  "year": "2019",
+  "status": "UNVERIFIED"
+ },
+ {
+  "id": "rte2023",
+  "families": [
+   "Réseau de Transport d'Électricité"
+  ],
+  "authors_text": "Réseau de Transport d'Électricité",
+  "year": "2023",
+  "status": "UNVERIFIED"
+ }
+]

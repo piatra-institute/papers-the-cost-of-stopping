@@ -755,6 +755,18 @@
       "total_advantage": 330.65074,
       "restart_cost_2023_retention": 5.791377,
       "restart_cost_2023_continuity": 1.605518
+    },
+    "savings_vs_observed": {
+      "retention": 175.774516,
+      "retention_fraction": 0.082717,
+      "continuity": 506.425256,
+      "continuity_fraction": 0.238318
+    },
+    "fault_output_loss_2022": {
+      "observed": 0.392384,
+      "retention": 0.351632,
+      "continuity": 0.249084,
+      "expansion": 0.219355
     }
   },
   "regimes": {
@@ -1025,7 +1037,9 @@
     "nash_rate_at_base": 0.0,
     "planner_rate_continental_at_base": 2.8,
     "nash_rate_continental_at_base": 0.0,
-    "wedge_at_base": 0.35
+    "wedge_at_base": 0.35,
+    "planner_rate_continental_at_half": 2.8,
+    "nash_rate_continental_at_half": 0
   },
   "vintage": {
     "observed": {

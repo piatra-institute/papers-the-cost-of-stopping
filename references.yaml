@@ -1,0 +1,341 @@
+# CSL references with stable IDs; cite with Pandoc [@id] syntax.
+# Migrated from the legacy inline bibliography. Entries with a DOI were resolved through doi.org
+# content negotiation (CSL-JSON) and checked for year and title; others were matched in Crossref
+# or entered by hand. Provenance per entry is in sources.md.
+references:
+- id: argote1990
+  type: article-journal
+  title: Learning Curves in Manufacturing
+  author:
+  - given: Linda
+    family: Argote
+  - given: Dennis
+    family: Epple
+  container-title: Science
+  volume: '247'
+  issue: '4945'
+  page: 920-924
+  DOI: 10.1126/science.247.4945.920
+  issued:
+    date-parts:
+    - - 1990
+- id: arrow1962
+  type: article-journal
+  title: The Economic Implications of Learning by Doing
+  author:
+  - given: Kenneth J.
+    family: Arrow
+  container-title: The Review of Economic Studies
+  volume: '29'
+  issue: '3'
+  page: 155-173
+  DOI: 10.2307/2295952
+  issued:
+    date-parts:
+    - - 1962
+- id: benkard2000
+  type: article-journal
+  title: 'Learning and Forgetting: The Dynamics of Aircraft Production'
+  author:
+  - given: C. Lanier
+    family: Benkard
+  container-title: American Economic Review
+  volume: '90'
+  issue: '4'
+  page: 1034-1054
+  DOI: 10.1257/aer.90.4.1034
+  issued:
+    date-parts:
+    - - 2000
+- id: berthelemy2015
+  type: article-journal
+  title: 'Nuclear reactors'' construction costs: The role of lead-time, standardization and technological
+    progress'
+  author:
+  - given: Michel
+    family: Berthélemy
+  - given: Lina
+    family: Escobar Rangel
+  container-title: Energy Policy
+  volume: '82'
+  page: 118-130
+  DOI: 10.1016/j.enpol.2015.03.015
+  issued:
+    date-parts:
+    - - 2015
+- id: blanchard1986
+  type: article-journal
+  title: Hysteresis and the European Unemployment Problem
+  author:
+  - given: Olivier J.
+    family: Blanchard
+  - given: Lawrence H.
+    family: Summers
+  container-title: NBER Macroeconomics Annual
+  volume: '1'
+  page: 15-78
+  DOI: 10.1086/654013
+  issued:
+    date-parts:
+    - - 1986
+- id: cour2025
+  type: report
+  title: 'The EPR Sector: Summary of the Thematic Public Report'
+  author:
+  - literal: Cour des comptes
+  publisher: Cour des comptes
+  publisher-place: Paris
+  issued:
+    date-parts:
+    - - 2025
+      - 1
+- id: davis2012
+  type: article-journal
+  title: Prospects for Nuclear Power
+  author:
+  - given: Lucas W
+    family: Davis
+  container-title: Journal of Economic Perspectives
+  volume: '26'
+  issue: '1'
+  page: 49-66
+  DOI: 10.1257/jep.26.1.49
+  issued:
+    date-parts:
+    - - 2012
+- id: dixit1992
+  type: article-journal
+  title: Investment and Hysteresis
+  author:
+  - given: Avinash
+    family: Dixit
+  container-title: Journal of Economic Perspectives
+  volume: '6'
+  issue: '1'
+  page: 107-132
+  DOI: 10.1257/jep.6.1.107
+  issued:
+    date-parts:
+    - - 1992
+- id: escobar2015
+  type: article-journal
+  title: 'Revisiting the Cost Escalation Curse of Nuclear Power: New Lessons from the French Experience'
+  author:
+  - given: Lina
+    family: Escobar Rangel
+  - given: François
+    family: Lévêque
+  container-title: Economics of Energy & Environmental Policy
+  volume: '4'
+  issue: '2'
+  DOI: 10.5547/2160-5890.4.2.lran
+  issued:
+    date-parts:
+    - - 2015
+- id: euratom2023
+  type: report
+  title: Annual Report 2022
+  author:
+  - literal: Euratom Supply Agency
+  publisher: Publications Office of the European Union
+  publisher-place: Luxembourg
+  issued:
+    date-parts:
+    - - 2023
+  URL: https://euratom-supply.ec.europa.eu/publications/esa-annual-reports_en
+- id: eurostat2025
+  type: webpage
+  title: Nuclear Energy Statistics
+  author:
+  - literal: Eurostat
+  container-title: Statistics Explained
+  publisher: European Commission
+  publisher-place: Luxembourg
+  issued:
+    date-parts:
+    - - 2025
+  URL: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Nuclear_energy_statistics
+- id: grubler2010
+  type: article-journal
+  title: 'The costs of the French nuclear scale-up: A case of negative learning by doing'
+  author:
+  - given: Arnulf
+    family: Grubler
+  container-title: Energy Policy
+  volume: '38'
+  issue: '9'
+  page: 5174-5188
+  DOI: 10.1016/j.enpol.2010.05.003
+  issued:
+    date-parts:
+    - - 2010
+- id: ipcc2022
+  type: chapter
+  title: Summary for Policymakers
+  author:
+  - literal: Intergovernmental Panel on Climate Change
+  container-title: 'Climate Change 2022: Mitigation of Climate Change. Contribution of Working Group III
+    to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change'
+  publisher: Cambridge University Press
+  publisher-place: Cambridge
+  issued:
+    date-parts:
+    - - 2022
+  DOI: 10.1017/9781009157926.001
+- id: iaea2023
+  type: report
+  title: Nuclear Power Reactors in the World
+  author:
+  - literal: International Atomic Energy Agency
+  collection-title: Reference Data Series
+  publisher: IAEA
+  publisher-place: Vienna
+  issued:
+    date-parts:
+    - - 2023
+  URL: https://www-pub.iaea.org/MTCD/Publications/PDF/RDS-2-43_web.pdf
+  collection-number: '2'
+  edition: 2023 edition
+- id: iea2022
+  type: report
+  title: A 10-Point Plan to Reduce the European Union's Reliance on Russian Natural Gas
+  author:
+  - literal: International Energy Agency
+  publisher: IEA
+  publisher-place: Paris
+  issued:
+    date-parts:
+    - - 2022
+      - 3
+  URL: https://www.iea.org/reports/a-10-point-plan-to-reduce-the-european-unions-reliance-on-russian-natural-gas
+- id: jarvis2022
+  type: article-journal
+  title: The Private and External Costs of Germany’s Nuclear Phase-Out
+  author:
+  - given: Stephen
+    family: Jarvis
+  - given: Olivier
+    family: Deschenes
+  - given: Akshaya
+    family: Jha
+  container-title: Journal of the European Economic Association
+  volume: '20'
+  issue: '3'
+  page: 1311-1346
+  DOI: 10.1093/jeea/jvac007
+  issued:
+    date-parts:
+    - - 2022
+- id: koomey2017
+  type: article-journal
+  title: A reply to “Historical construction costs of global nuclear power reactors”
+  author:
+  - given: Jonathan
+    family: Koomey
+  - given: Nathan E.
+    family: Hultman
+  - given: Arnulf
+    family: Grubler
+  container-title: Energy Policy
+  volume: '102'
+  page: 640-643
+  DOI: 10.1016/j.enpol.2016.03.052
+  issued:
+    date-parts:
+    - - 2017
+- id: lovering2016
+  type: article-journal
+  title: Historical construction costs of global nuclear power reactors
+  author:
+  - given: Jessica R.
+    family: Lovering
+  - given: Arthur
+    family: Yip
+  - given: Ted
+    family: Nordhaus
+  container-title: Energy Policy
+  volume: '91'
+  page: 371-382
+  DOI: 10.1016/j.enpol.2016.01.011
+  issued:
+    date-parts:
+    - - 2016
+- id: muller2017
+  type: book
+  title: The Politics of Nuclear Energy in Western Europe
+  editor:
+  - given: Wolfgang C.
+    family: Müller
+  - given: Paul W.
+    family: Thurner
+  publisher: Oxford University Press
+  DOI: 10.1093/oso/9780198747031.001.0001
+  issued:
+    date-parts:
+    - - 2017
+  publisher-place: Oxford
+- id: nao2017
+  type: report
+  title: Hinkley Point C
+  author:
+  - literal: National Audit Office
+  number: HC 40, Session 2017–18
+  publisher: National Audit Office
+  publisher-place: London
+  issued:
+    date-parts:
+    - - 2017
+      - 6
+      - 23
+  URL: https://www.nao.org.uk/reports/hinkley-point-c/
+- id: nao2026
+  type: report
+  title: Sizewell C
+  author:
+  - literal: National Audit Office
+  number: HC 33, Session 2026–27
+  publisher: National Audit Office
+  publisher-place: London
+  issued:
+    date-parts:
+    - - 2026
+      - 5
+      - 20
+  URL: https://www.nao.org.uk/reports/sizewell-c/
+- id: nea2020
+  type: report
+  title: 'Unlocking Reductions in the Construction Costs of Nuclear: A Practical Guide for Stakeholders'
+  author:
+  - literal: Nuclear Energy Agency
+  number: NEA No. 7530
+  publisher: OECD Publishing
+  publisher-place: Paris
+  issued:
+    date-parts:
+    - - 2020
+  DOI: 10.1787/33ba86e1-en
+- id: stuk2019
+  type: report
+  title: 'Finnish Report on Nuclear Safety: Finnish 8th National Report as Referred to in Article 5 of
+    the Convention on Nuclear Safety'
+  author:
+  - literal: Radiation and Nuclear Safety Authority
+  number: STUK-B 237
+  publisher: STUK
+  publisher-place: Helsinki
+  issued:
+    date-parts:
+    - - 2019
+      - 7
+  URL: https://www.iaea.org/sites/default/files/finland_nr-8th-rm.pdf
+- id: rte2023
+  type: report
+  title: 'Electricity Report 2022: Key Findings'
+  author:
+  - literal: Réseau de Transport d'Électricité
+  publisher: RTE
+  publisher-place: Paris
+  issued:
+    date-parts:
+    - - 2023
+  URL: https://analysesetdonnees.rte-france.com/en

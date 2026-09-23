@@ -509,6 +509,16 @@ def analysis_counterfactuals(runs):
         "restart_cost_2023_retention": out["retention"]["next_unit_cost_2023"],
         "restart_cost_2023_continuity": out["continuity"]["next_unit_cost_2023"],
     }
+    # derived quantities quoted in prose (computed from the totals above)
+    obs = out["observed"]["total"]
+    out["savings_vs_observed"] = {
+        "retention": round(obs - out["retention"]["total"], 6),
+        "retention_fraction": round((obs - out["retention"]["total"]) / obs, 6),
+        "continuity": round(obs - out["continuity"]["total"], 6),
+        "continuity_fraction": round((obs - out["continuity"]["total"]) / obs, 6),
+    }
+    out["fault_output_loss_2022"] = {
+        name: round(1.0 - out[name]["availability_2022"], 6) for name in SCENARIOS}
     return out
 
 
@@ -649,7 +659,11 @@ def analysis_coordination():
             "nash_rate_at_base": base["nash_rate"],
             "planner_rate_continental_at_base": round(base["planner_rate"] * 8, 6),
             "nash_rate_continental_at_base": round(base["nash_rate"] * 8, 6),
-            "wedge_at_base": base["wedge"]}
+            "wedge_at_base": base["wedge"],
+            "planner_rate_continental_at_half": round(
+                next(c for c in curve if c["sigma"] == 0.5)["planner_rate"] * 8, 6),
+            "nash_rate_continental_at_half": round(
+                (next(c for c in curve if c["sigma"] == 0.5)["nash_rate"] or 0) * 8, 6)}
 
 
 def analysis_vintage(runs):

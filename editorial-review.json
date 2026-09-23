@@ -1,10 +1,10 @@
 {
-  "manuscript_sha256": "018babf75ee78008db643f96b0fe3bc192404e6ffb0dae4d4531c7f81f8ae6a2",
+  "manuscript_sha256": "0830a243045a832ce7308969a86f331b4e97467d2d39934bba58145cfb166289",
   "full_read": true,
   "argument_review": true,
   "structure_review": true,
   "voice_review": true,
   "source_review": true,
   "final_read": true,
-  "notes": "Prose revision: descriptive headings; abstract rewritten (about 270 words, previously about 420); self-reference and 'rather than' constructions removed; aphoristic closers ('A fleet built in one burst ages in one burst', 'the price reads as a verdict', closing civilizational lesson) rewritten as declaratives; every number and citation preserved."
+  "notes": "Structured-evidence migration: inline bibliography converted to references.yaml (CSL) with Pandoc [@id] citations; claims.yaml ledger and execution receipt added; two factual corrections to the prose (ratchet threshold wording, Eurostat decline from peak); prose otherwise unchanged."
 }

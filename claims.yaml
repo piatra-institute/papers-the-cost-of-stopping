@@ -1,0 +1,822 @@
+schema: 1
+coverage: reviewed
+reviewed_manuscript_sha256: 0830a243045a832ce7308969a86f331b4e97467d2d39934bba58145cfb166289
+claims:
+- id: decay-rate
+  kind: computation
+  passage: 'Forgetting runs on the calendar: K decays by 6.6% in every idle year, a rate with a microfoundation
+    in the organizational-forgetting literature, where production experience measurably depreciates on
+    interrupted lines [@argote1990; @benkard2000].'
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /calibration/delta
+    reported: 6.6%
+    scale: 100
+    decimals: 1
+    units: annual capability decay while idle
+    conditions: calibrated so fourteen idle years price the next unit at 4 times the series cost
+- id: build-years-mature
+  kind: computation
+  passage: The cost of a unit rises exponentially as capability falls, normalized to 1 at the mature programme;
+    the time to build rises the same way, from 6 years at maturity to 17.1 at the bottom of the observed
+    decay.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /calibration/build_years_at_mature
+    reported: '6'
+    decimals: 0
+    units: years to build a unit at mature capability
+    conditions: calibration
+- id: build-years-decayed
+  kind: computation
+  passage: The cost of a unit rises exponentially as capability falls, normalized to 1 at the mature programme;
+    the time to build rises the same way, from 6 years at maturity to 17.1 at the bottom of the observed
+    decay.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /calibration/build_years_after_hiatus
+    reported: '17.1'
+    decimals: 1
+    units: years to build a unit after fourteen idle years
+    conditions: calibration
+- id: calib-restart-4x
+  kind: computation
+  passage: The construction-start hiatus, April 1991 to August 2005, is counted as fourteen idle years,
+    and the decay rate is set so that fourteen idle years price the next unit at 4 times the series cost,
+    the auditors' multiple for the projects that ended the hiatus.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /calibration/cost_ratio_after_hiatus
+    reported: '4'
+    decimals: 0
+    units: unit cost relative to the mature series
+    conditions: calibration anchor (hiatus)
+- id: calib-pair-15
+  kind: computation
+  passage: The learning rate is set so that one completion at that decayed level cuts the next unit's
+    cost by 15%, the industry's pair effect.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /calibration/pair_effect_check
+    reported: 15%
+    scale: 100
+    decimals: 0
+    units: percent cost reduction on the next unit after one completion at the decayed level
+    conditions: calibration anchor (pair effect)
+- id: illusion-window
+  kind: computation
+  passage: Output peaks 15 years later and stays within 5% of peak until 2010, an illusion window of 28
+    years in which the flow is dead and the stock cannot show it.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /stock_flow/illusion_window_years
+    reported: '28'
+    decimals: 0
+    units: years from order stop to end of output plateau
+    conditions: deterministic model, observed order book, base parameters
+- id: order-stop-1982
+  kind: computation
+  passage: Output peaks 15 years later and stays within 5% of peak until 2010, an illusion window of 28
+    years in which the flow is dead and the stock cannot show it.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /stock_flow/stock_flow_lag_years
+    reported: '15'
+    decimals: 0
+    units: years from order stop to output peak
+    conditions: deterministic model, observed order book, base parameters
+- id: plateau-end-2010
+  kind: computation
+  passage: Output peaks 15 years later and stays within 5% of peak until 2010, an illusion window of 28
+    years in which the flow is dead and the stock cannot show it.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /stock_flow/plateau_end_year
+    reported: '2010'
+    decimals: 0
+    units: last year within 5% of peak output
+    conditions: deterministic model, observed order book, base parameters
+- id: k-at-peak
+  kind: computation
+  passage: At the output peak, capability has already fallen to 0.83 of its mobilization level; by the
+    end of the plateau it stands at 0.34.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /stock_flow/k_at_peak_over_k_mature
+    reported: '0.83'
+    decimals: 2
+    units: capability relative to mobilization level at output peak
+    conditions: deterministic model, observed order book, base parameters
+- id: k-at-plateau-end
+  kind: computation
+  passage: At the output peak, capability has already fallen to 0.83 of its mobilization level; by the
+    end of the plateau it stands at 0.34.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /stock_flow/k_at_plateau_end_over_k_mature
+    reported: '0.34'
+    decimals: 2
+    units: capability relative to mobilization level at end of plateau
+    conditions: deterministic model, observed order book, base parameters
+- id: restart-probe-2005
+  kind: computation
+  passage: 'The model''s own restart probe in 2005 prices at 3.1 against the calibrated 4.0, and the gap
+    is instructive: the record''s restart carried a design-novelty penalty on top of the interruption
+    penalty, and the model prices only the second.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /stock_flow/emergent_restart_cost_2005
+    reported: '3.1'
+    decimals: 1
+    units: unit cost relative to the mature series
+    conditions: deterministic model, observed order book, base parameters
+- id: abstract-illusion
+  kind: computation
+  passage: Output holds near its peak for 28 years after orders stop while capability falls to a third
+    of its mobilization level; a cost-reading decision-maker recovers from an order freeze shorter than
+    7 years and remains locked from 7 years on; and fourteen idle years take 22 building years to undo.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /stock_flow/illusion_window_years
+    reported: '28'
+    decimals: 0
+    units: years from order stop to end of output plateau
+    conditions: deterministic model, observed order book, base parameters
+- id: caption-order-stop
+  kind: computation
+  passage: Orders stop in 1982; generation rises for 15 more years and holds within 5% of its peak until
+    2010; the capability underneath both falls past half its mobilization level in 2005 and keeps falling.](../simulation/output/figures/stock_flow.png){width=100%}
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /stock_flow/order_stop_year
+    reported: '1982'
+    decimals: 0
+    units: model year orders stop
+    conditions: deterministic model, observed order book, base parameters
+- id: caption-half-2005
+  kind: computation
+  passage: Orders stop in 1982; generation rises for 15 more years and holds within 5% of its peak until
+    2010; the capability underneath both falls past half its mobilization level in 2005 and keeps falling.](../simulation/output/figures/stock_flow.png){width=100%}
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /stock_flow/five_stops/capability_stop_half_mature
+    reported: '2005'
+    decimals: 0
+    units: year capability falls past half its mobilization level
+    conditions: deterministic model, observed order book, base parameters
+- id: recovery-22
+  kind: computation
+  passage: Capability returns to within 10% of the mature price after 22 years of building.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /hysteresis/freeze_14/recovery_years
+    reported: '22'
+    decimals: 0
+    units: building years to return within 10% of mature cost
+    conditions: fourteen-year freeze, ordering resumed at mobilization rate with a payer of last resort
+- id: recovery-7
+  kind: computation
+  passage: Seven idle years also take 22 building years to undo, and eighteen take 25, because recovery
+    time is dominated by the first completion cycle, whose length the decay itself set.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /hysteresis/rows/0/recovery_years
+    reported: '22'
+    decimals: 0
+    units: building years to recover
+    conditions: seven-year freeze
+- id: recovery-18
+  kind: computation
+  passage: Seven idle years also take 22 building years to undo, and eighteen take 25, because recovery
+    time is dominated by the first completion cycle, whose length the decay itself set.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /hysteresis/rows/3/recovery_years
+    reported: '25'
+    decimals: 0
+    units: building years to recover
+    conditions: eighteen-year freeze
+- id: recovery-learning-at-order
+  kind: computation
+  passage: Move the learning to order time instead of completion time, leaving every other parameter fixed,
+    and recovery takes 3 years.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /hysteresis/mechanism_check/learning_at_start
+    reported: '3'
+    decimals: 0
+    units: building years to recover with learning at order time
+    conditions: fourteen-year freeze, all other parameters fixed
+- id: abstract-recovery
+  kind: computation
+  passage: Output holds near its peak for 28 years after orders stop while capability falls to a third
+    of its mobilization level; a cost-reading decision-maker recovers from an order freeze shorter than
+    7 years and remains locked from 7 years on; and fourteen idle years take 22 building years to undo.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /hysteresis/freeze_14/recovery_years
+    reported: '22'
+    decimals: 0
+    units: building years to recover
+    conditions: fourteen-year freeze
+- id: critical-freeze
+  kind: computation
+  passage: Freeze orders for less than 7 years and the programme restarts itself and recovers.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /ratchet/critical_freeze_years
+    reported: '7'
+    decimals: 0
+    units: shortest freeze after which the cost-reading chooser stays locked
+    conditions: tolerance 1.8 times series cost; freezes of 1-6 years recover
+- id: abstract-critical-freeze
+  kind: computation
+  passage: Output holds near its peak for 28 years after orders stop while capability falls to a third
+    of its mobilization level; a cost-reading decision-maker recovers from an order freeze shorter than
+    7 years and remains locked from 7 years on; and fourteen idle years take 22 building years to undo.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /ratchet/critical_freeze_years
+    reported: '7'
+    decimals: 0
+    units: shortest locking freeze in years
+    conditions: tolerance 1.8 times series cost
+- id: critical-freeze-tol12
+  kind: computation
+  passage: The threshold moves with the tolerance, from 1 year for a chooser who insists on 1.2 times
+    the series price up to 13 years for one who would tolerate triple cost.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /ratchet/critical_freeze_by_tolerance/1.2
+    reported: '1'
+    decimals: 0
+    units: shortest locking freeze in years
+    conditions: tolerance 1.2 times series cost
+- id: critical-freeze-tol30
+  kind: computation
+  passage: The threshold moves with the tolerance, from 1 year for a chooser who insists on 1.2 times
+    the series price up to 13 years for one who would tolerate triple cost.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /ratchet/critical_freeze_by_tolerance/3.0
+    reported: '13'
+    decimals: 0
+    units: shortest locking freeze in years
+    conditions: tolerance 3.0 times series cost
+- id: probe-first
+  kind: computation
+  passage: 'Probes launched from inside the locked state price at 4.2 on the first attempt and settle
+    near 6 as decay continues between probes: every exploratory project a locked system undertakes is
+    launched at the capability the lock created, so every probe returns confirming evidence.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /ratchet/long_freeze_example/probe_costs/0
+    reported: '4.2'
+    decimals: 1
+    units: unit cost of the first probe relative to the mature series
+    conditions: fourteen-year freeze, tolerance 1.8
+- id: probe-settle
+  kind: computation
+  passage: 'Probes launched from inside the locked state price at 4.2 on the first attempt and settle
+    near 6 as decay continues between probes: every exploratory project a locked system undertakes is
+    launched at the capability the lock created, so every probe returns confirming evidence.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /ratchet/long_freeze_example/probe_costs/9
+    reported: '6'
+    decimals: 0
+    units: unit cost of the tenth probe relative to the mature series
+    conditions: fourteen-year freeze, tolerance 1.8; later probes range 6.3-7.2
+- id: planner-2-8
+  kind: computation
+  passage: When the continental share reaches one half, a continental planner orders 2.8 units a year
+    across the system while the equilibrium of national choosers stays at zero, and the wedge persists
+    across the shared-capability range.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /coordination/planner_rate_continental_at_half
+    reported: '2.8'
+    decimals: 1
+    units: units ordered per year across eight countries
+    conditions: continental capability share 0.5
+- id: observed-total
+  kind: computation
+  passage: 'The observed path costs 2125 units: 275 of building, 1555 of fossil burning at base externality
+    prices, and 155 of 2022 shock.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/observed/total
+    reported: '2125'
+    decimals: 0
+    units: mature-programme cost units
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: observed-build
+  kind: computation
+  passage: 'The observed path costs 2125 units: 275 of building, 1555 of fossil burning at base externality
+    prices, and 155 of 2022 shock.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/observed/build
+    reported: '275'
+    decimals: 0
+    units: mature-programme cost units
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: observed-fossil
+  kind: computation
+  passage: 'The observed path costs 2125 units: 275 of building, 1555 of fossil burning at base externality
+    prices, and 155 of 2022 shock.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/observed/fossil
+    reported: '1555'
+    decimals: 0
+    units: mature-programme cost units
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: observed-shock
+  kind: computation
+  passage: 'The observed path costs 2125 units: 275 of building, 1555 of fossil burning at base externality
+    prices, and 155 of 2022 shock.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/observed/shock
+    reported: '155'
+    decimals: 0
+    units: mature-programme cost units
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: retention-saving
+  kind: computation
+  passage: Retention alone saves 176, about 8%, for no additional building.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/savings_vs_observed/retention
+    reported: '176'
+    decimals: 0
+    units: mature-programme cost units
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: retention-saving-pct
+  kind: computation
+  passage: Retention alone saves 176, about 8%, for no additional building.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/savings_vs_observed/retention_fraction
+    reported: 8%
+    scale: 100
+    decimals: 0
+    units: percent of observed total cost
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: continuity-extra-build
+  kind: computation
+  passage: Minimum continuity costs 69 more units of building than retention, avoids 21,215 TWh of fossil
+    generation, roughly halves the shock exposure, and lands at 1619, a 24% saving on the observed path.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/continuity_vs_retention/extra_build
+    reported: '69'
+    decimals: 0
+    units: mature-programme cost units
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: continuity-fossil-avoided
+  kind: computation
+  passage: Minimum continuity costs 69 more units of building than retention, avoids 21,215 TWh of fossil
+    generation, roughly halves the shock exposure, and lands at 1619, a 24% saving on the observed path.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/continuity_vs_retention/fossil_saved_twh
+    reported: 21,215
+    decimals: 0
+    units: model TWh of fossil generation avoided relative to retention
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: continuity-total
+  kind: computation
+  passage: Minimum continuity costs 69 more units of building than retention, avoids 21,215 TWh of fossil
+    generation, roughly halves the shock exposure, and lands at 1619, a 24% saving on the observed path.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/continuity/total
+    reported: '1619'
+    decimals: 0
+    units: mature-programme cost units
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: continuity-saving-pct
+  kind: computation
+  passage: Minimum continuity costs 69 more units of building than retention, avoids 21,215 TWh of fossil
+    generation, roughly halves the shock exposure, and lands at 1619, a 24% saving on the observed path.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/savings_vs_observed/continuity_fraction
+    reported: 24%
+    scale: 100
+    decimals: 0
+    units: percent of observed total cost
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: fault-loss-observed
+  kind: computation
+  passage: Its fleet enters 2022 with staggered vintages, so the common-mode fault costs it a quarter
+    of output against the observed path's 39%, and its next unit in 2023 prices at 1.6 against the observed
+    5.8.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/fault_output_loss_2022/observed
+    reported: 39%
+    scale: 100
+    decimals: 0
+    units: percent of nuclear output lost to the common-mode fault in 2022
+    conditions: observed order book; continuity loses 0.249
+- id: next-unit-continuity
+  kind: computation
+  passage: Its fleet enters 2022 with staggered vintages, so the common-mode fault costs it a quarter
+    of output against the observed path's 39%, and its next unit in 2023 prices at 1.6 against the observed
+    5.8.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/continuity/next_unit_cost_2023
+    reported: '1.6'
+    decimals: 1
+    units: unit cost relative to the mature series in 2023
+    conditions: minimum-continuity order book
+- id: next-unit-observed
+  kind: computation
+  passage: Its fleet enters 2022 with staggered vintages, so the common-mode fault costs it a quarter
+    of output against the observed path's 39%, and its next unit in 2023 prices at 1.6 against the observed
+    5.8.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/observed/next_unit_cost_2023
+    reported: '5.8'
+    decimals: 1
+    units: unit cost relative to the mature series in 2023
+    conditions: observed order book
+- id: expansion-total
+  kind: computation
+  passage: At base externality prices it is the cheapest path of the four, 1460, because from 1973 to
+    the renewables era its larger fleet displaces enormous fossil generation; it also curtails about 17,000
+    TWh of its own output once renewables arrive, and it concentrates vintages almost as badly as the
+    observed path.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/expansion/total
+    reported: '1460'
+    decimals: 0
+    units: mature-programme cost units
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: expansion-curtailed
+  kind: computation
+  passage: At base externality prices it is the cheapest path of the four, 1460, because from 1973 to
+    the renewables era its larger fleet displaces enormous fossil generation; it also curtails about 17,000
+    TWh of its own output once renewables arrive, and it concentrates vintages almost as badly as the
+    observed path.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/expansion/curtailed_twh
+    reported: 17,000
+    significant_digits: 2
+    units: model TWh curtailed
+    conditions: crash-expansion order book, 1973-2040
+- id: abstract-savings-8
+  kind: computation
+  passage: Against the observed path, retaining the closed reactors saves 8% of total system cost, and
+    adding a replacement sequence of two units a year saves 24%, an advantage that holds in 21 of 24 regimes.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/savings_vs_observed/retention_fraction
+    reported: 8%
+    scale: 100
+    decimals: 0
+    units: percent of observed total cost
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: abstract-savings-24
+  kind: computation
+  passage: Against the observed path, retaining the closed reactors saves 8% of total system cost, and
+    adding a replacement sequence of two units a year saves 24%, an advantage that holds in 21 of 24 regimes.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /counterfactuals/savings_vs_observed/continuity_fraction
+    reported: 24%
+    scale: 100
+    decimals: 0
+    units: percent of observed total cost
+    conditions: deterministic model, 1973-2040 totals at base externality prices
+- id: abstract-regimes
+  kind: computation
+  passage: Against the observed path, retaining the closed reactors saves 8% of total system cost, and
+    adding a replacement sequence of two units a year saves 24%, an advantage that holds in 21 of 24 regimes.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /regimes/holds_in
+    reported: '21'
+    decimals: 0
+    units: regimes in which continuity beats retention
+    conditions: 24-cell grid of shock, renewables timing and externality price
+- id: regimes-cells
+  kind: computation
+  passage: 'The continuity claim was swept across 24 regimes: the 2022 shock on or off, renewables arriving
+    early or late, fossil externalities priced from a quarter of base to one and a half times.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /regimes/cells
+    reported: '24'
+    decimals: 0
+    units: regime cells
+    conditions: shock on/off x three renewables paths x four externality multiples
+- id: regimes-holds
+  kind: computation
+  passage: The replacement sequence beats retention in 21.
+  evidence:
+    file: simulation/output/results.json
+    run_id: model
+    pointer: /regimes/holds_in
+    reported: '21'
+    decimals: 0
+    units: regimes in which continuity beats retention
+    conditions: 24-cell grid
+- id: capability-stock
+  kind: definition
+  passage: One capability stock K between 0 and 1 stands for everything the record describes losing.
+  rationale: Defines the model's central state variable; the one-dimensional aggregation is acknowledged
+    as a simplification in the limitations section.
+- id: two-clocks
+  kind: assumption
+  passage: 'Learning arrives at completion: K rises only when a unit is finished, the learning-by-doing
+    term [@arrow1962] lagged by the build.'
+  rationale: The completion lag is the modelling choice that generates the asymmetry; the paper tests
+    it directly by moving learning to order time (recovery falls from 22 to 3 years).
+- id: calibration-anchoring
+  kind: assumption
+  passage: 'Both anchors are stated magnitudes, and calibration here is anchoring: the model is disciplined
+    by the record, and none of its outputs is an econometric estimate.'
+  rationale: States that the two rates are set to documented magnitudes (fourteen-year hiatus, fourfold
+    restart premium, 15% pair effect) and that no model output is an econometric estimate.
+- id: fossil-price-shock
+  kind: assumption
+  passage: Fossil generation carries an all-in cost of fuel, carbon, and health of about €60 per MWh;
+    2022 arrives as a two-year price shock on whatever fossil generation each scenario still needs, and
+    a common-mode fault takes half of the largest ten-year vintage cohort offline for the first shock
+    year, which is the French lesson built into the accounting.
+  rationale: Input price for the stylized continent; the regime sweep varies the externality component
+    from a quarter of base to one and a half times.
+- id: deterministic
+  kind: assumption
+  passage: The model is deterministic; a rerun reproduces every number bit for bit.
+  rationale: 'Confirmed by the execution receipt: the recorded rerun reproduced results.json byte for
+    byte.'
+- id: cost-reading-chooser
+  kind: assumption
+  passage: 'Replace it with the chooser Europe actually had: one who orders the replacement rate whenever
+    the engineering estimate for a new unit, priced off current capability with the industry''s documented
+    optimism, comes in under a cost tolerance, and who otherwise launches an exploratory unit every eight
+    years to test whether building has become reasonable again.'
+  rationale: Behavioural rule for the ratchet experiment (estimate bias, tolerance, probe interval, ten-year
+    programme commitment); the threshold's dependence on tolerance is reported rather than hidden.
+- id: minimum-continuity
+  kind: definition
+  passage: 'Defended: a minimum-continuity Europe that retains reactors its regulators judge safe while
+    fossil generation remains, and holds a slow standardized replacement sequence, about two units a year
+    continent-wide, alongside the renewable expansion that actually occurred.'
+  rationale: Defines the one counterfactual the paper defends and separates it from the three it rejects.
+- id: chernobyl-ratified
+  kind: interpretation
+  passage: The retreat predates Chernobyl, so the accident ratified a collapse it did not cause.
+  rationale: Chronological inference from the construction-start record (no Western starts between Civaux-2
+    in 1991 and Olkiluoto-3 in 2005; collapse by 1983); the causal reading of 1986 as lock-in is interpretive.
+- id: probe-self-confirming
+  kind: interpretation
+  passage: Within the model no single project can disconfirm the stop, because any project cheap enough
+    to disconfirm it would require the capability whose absence is the thing being tested.
+  rationale: Follows from the locked-state probe costs in the model (every probe above tolerance); mapping
+    Olkiluoto-3 and Flamanville-3 to such probes is interpretive.
+- id: coordination-failure
+  kind: interpretation
+  passage: Continuity was affordable at continental scale and unaffordable at national scale, and the
+    scale at which it was affordable had no one entitled to choose it.
+  rationale: 'Reading of the eight-country game: the planner orders a positive rate while national choosers
+    order zero once capability is shared.'
+- id: renewables-orthogonal
+  kind: interpretation
+  passage: The continuity advantage varies by under 1% between early and late renewable arrival, because
+    in every scenario renewables displace the same fossil residual.
+  rationale: In the regime grid the continuity advantage is identical across the three renewables paths
+    at every shock and externality setting (results.json /regimes/grid), so the variation is zero, within
+    the stated bound.
+- id: rational-without-damage
+  kind: interpretation
+  passage: The retreat was approximately rational in a world without climate damage, without air-pollution
+    mortality, and without geopolitics.
+  rationale: Reading of the three failing regime cells (externalities at a quarter of base and no shock).
+- id: seams-direction
+  kind: interpretation
+  passage: Each seam either biases the model against the interruption penalty or leaves the penalty understated;
+    none of them manufactures it.
+  rationale: 'Argued limitation: omitted design novelty, crude congestion, one-year fault and fully idle
+    hiatus all lower the modelled penalty.'
+- id: expansion-bet
+  kind: interpretation
+  passage: 'The model prices social cost and nothing else, no financing constraint, no siting limit, no
+    political feasibility, so what it can say is this: the case for the replacement sequence is robust
+    across the externality range, and the case for crash building is a bet on the externality price.'
+  rationale: Crash expansion overtakes continuity only from three quarters of base externality price (results.json
+    /regimes/expansion_overtakes_at_damage_mult = 0.75).
+- id: continuity-normative
+  kind: normative
+  passage: Where a capability that is difficult to reconstruct still addresses a live problem, the cost
+    of stopping should be assessed before stopping, because the prices observed afterward will appear
+    to confirm the decision.
+  rationale: Policy conclusion drawn from the mechanism; it depends on the model's stated prices and the
+    record, not on a measured quantity.
+- id: iea-russian-gas
+  kind: source
+  passage: 'In February 2022 Russia invaded Ukraine, and Europe discovered its dependence a second time:
+    155 bcm of Russian gas in the preceding year, around 45% of its gas imports and almost 40% of its
+    consumption [@iea2022].'
+  evidence:
+    citation_id: iea2022
+    locator: Report page, introduction
+    verified: true
+    verification_note: 'Fetched the IEA report page (iea.org): ''The total 155 bcm imported from Russia
+      accounted for around 45% of the EU''s gas imports in 2021 and almost 40% of its total gas consumption.'''
+- id: iaea-hiatus
+  kind: source
+  passage: Western starts had collapsed by 1983; between the start of Civaux-2 in April 1991 and the start
+    of Olkiluoto-3 in August 2005 there were none at all [@iaea2023].
+  evidence:
+    citation_id: iaea2023
+    locator: Tables of reactors in operation (Civaux-2 construction start 1991-4; Olkiluoto-3 construction
+      start 2005-8)
+    verified: true
+    verification_note: Fetched RDS-2 No. 43 (2023 edition) PDF from www-pub.iaea.org; the reactor tables
+      list FR-73 Civaux-2 construction start 1991-4 and FI-5 Olkiluoto-3 construction start 2005-8.
+- id: eurostat-output
+  kind: source
+  passage: 'Output declined slowest of all: EU nuclear generation kept rising to a peak of 928 TWh in
+    2004 and had fallen 30% by 2024, to just under 650 TWh, or 23.3% of EU electricity [@eurostat2025].'
+  evidence:
+    citation_id: eurostat2025
+    locator: Statistics Explained, 'Nuclear energy statistics', text and Table 2
+    verified: true
+    verification_note: 'Fetched the Statistics Explained page: peak of 928 438 GWh in 2004; 649 524 GWh
+      in 2024; 23.3% of EU electricity in 2024. The page''s 29% decline is for 2006-2024; the decline
+      from the 2004 peak is 30.0%, which the prose now states.'
+- id: nao-ol3
+  kind: source
+  passage: Olkiluoto-3 was contracted at €3.2 billion for operation in 2009; it connected to the grid
+    in 2022, and by 2017 was already €5.3 billion over budget [@nao2017].
+  evidence:
+    citation_id: nao2017
+    locator: Hinkley Point C, HC 40, key facts on EPR comparators
+    verified: true
+    verification_note: 'Fetched the NAO PDF: ''It was expected to cost €3.2 billion and begin generating
+      power in 2009 ... the project is estimated to be €5.3 billion over budget.'' The grid-connection
+      year 2022 is from the IAEA table (grid date 2022-3).'
+- id: nao-four-times
+  kind: source
+  passage: 'The UK''s auditors, looking back from 2026, put it in one sentence: the French and Finnish
+    projects experienced delays of more than a decade and cost four times their original estimates [@nao2026].'
+  evidence:
+    citation_id: nao2026
+    locator: Sizewell C, HC 33 (20 May 2026), summary
+    verified: true
+    verification_note: 'Fetched the NAO PDF: ''The French and Finnish projects experienced delays of more
+      than a decade and cost four times their original estimates.'''
+- id: stuk-long-break
+  kind: source
+  passage: 'The Finnish regulator''s own account of why is the plainest document in the record: construction
+    "started after a long break in nuclear power plant construction in Europe, which had resulted in loss
+    of experienced and qualified engineering and manufacturing resources," compounded by suppliers unfamiliar
+    with the regulatory framework and a design incomplete at first concrete [@stuk2019].'
+  evidence:
+    citation_id: stuk2019
+    locator: STUK-B 237, section on Olkiluoto 3 construction
+    verified: true
+    verification_note: 'Fetched the report PDF (iaea.org): ''after a long break in nuclear power plant
+      construction in Europe, which had resulted in loss of experienced and qualified engineering and
+      manufacturing resources. Lack of knowledge on Finnish regulatory framework ... insufficient completion
+      of the design prior to construction''.'
+- id: jarvis-half
+  kind: source
+  passage: After 2011 it shut more than half its nuclear capacity while substantial coal generation remained
+    on its grid.
+  evidence:
+    citation_id: jarvis2022
+    locator: Abstract
+    verified: true
+    verification_note: 'Crossref abstract (DOI 10.1093/jeea/jvac007): the shutdown of more than half of
+      German nuclear production capacity after Fukushima, offset primarily by coal-fired production and
+      net imports.'
+- id: jarvis-policy
+  kind: source
+  passage: 'The authors'' comparison is the one that matters for policy: a decision-maker would need to
+    assign implausibly high costs to nuclear accident risk and waste for the phase-out to net out positive.'
+  evidence:
+    citation_id: jarvis2022
+    locator: Abstract
+    verified: true
+    verification_note: 'Crossref abstract: social cost of the phase-out €3 to €8 billion per year, mostly
+      mortality from local air pollution; policymakers would have to significantly overestimate the risk
+      or cost of a nuclear accident to conclude that benefits exceed social costs.'
+- id: ipcc-costs
+  kind: source
+  passage: The rejected counterfactuals stay rejected on the evidence the model does not contain, beginning
+    with the IPCC's cost record for the alternatives, unit costs of solar down 85%, wind 55%, batteries
+    85% across 2010–2019 [@ipcc2022], which any reactor programme claiming renewable investment would
+    have had to outbid.
+  evidence:
+    citation_id: ipcc2022
+    locator: SPM B.4.1
+    verified: true
+    verification_note: 'Fetched the SPM (ipcc.ch): ''From 2010 to 2019, there have been sustained decreases
+      in the unit costs of solar energy (85%), wind energy (55%), and lithium-ion batteries (85%)''.'
+- id: forgetting-evidence
+  kind: source
+  passage: 'Forgetting runs on the calendar: K decays by 6.6% in every idle year, a rate with a microfoundation
+    in the organizational-forgetting literature, where production experience measurably depreciates on
+    interrupted lines [@argote1990; @benkard2000].'
+  evidence:
+    citation_id: benkard2000
+    locator: Abstract
+    verified: true
+    verification_note: 'OpenAlex abstract (DOI 10.1257/aer.90.4.1034): strong support for organizational
+      forgetting, with production experience depreciating over time, in commercial aircraft production.
+      Argote and Epple (1990) abstract lists organizational forgetting among reasons for learning-curve
+      variation.'
+- id: no-universal-escalation
+  kind: source
+  passage: 'The econometric literature points the same way: lead times and cost outcomes vary strongly
+    with construction regime and continuity, and follow no universal escalation law [@berthelemy2015;
+    @lovering2016; @koomey2017].'
+  evidence:
+    citation_id: lovering2016
+    locator: Abstract
+    verified: true
+    verification_note: 'OpenAlex abstract (DOI 10.1016/j.enpol.2016.01.011): cost trends varied by era,
+      country and experience, with milder escalation or declines in many countries and no inherent escalation
+      trend.'
+- id: escobar-reanalysis
+  kind: source
+  passage: Even the French programme's escalation, the strongest case for cost growth inside a standardized
+    series [@grubler2010], softens on reanalysis of the utility's own accounts [@escobar2015].
+  evidence:
+    citation_id: escobar2015
+    locator: Abstract
+    verified: true
+    verification_note: 'OpenAlex abstract (DOI 10.5547/2160-5890.4.2.lran): using Cour des comptes construction
+      costs for the French fleet, previous studies overestimated escalation; evidence of learning within
+      the same size and type of reactor.'
+- id: davis-marginal
+  kind: source
+  passage: Sober assessments of nuclear economics before Fukushima already found the private case marginal
+    [@davis2012]; nothing here contradicts them, because the argument was never that reactors were privately
+    cheap.
+  evidence:
+    citation_id: davis2012
+    locator: Abstract
+    verified: true
+    verification_note: 'Crossref abstract (DOI 10.1257/jep.26.1.49): construction costs are high enough
+      that an economic argument for nuclear is difficult before externalities; a renaissance seems unlikely.'
+runs:
+- id: model
+  required: true
+  record: verification/model.json
